@@ -1,2 +1,2 @@
 # RPS-Multiplayer
-Rock Paper Scissors game the two people can play
+Rock Paper Scissors game the two people can play.
