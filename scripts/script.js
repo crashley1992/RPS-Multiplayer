@@ -1,6 +1,7 @@
 //link firbase database
 var firebaseConfig = {
-    apiKey: "AIzaSyAZWNT2tAx_jL2WnPfW0ivdinxsp9HqQUw",
+  //please put your own API key here.
+  
     authDomain: "train-scheduler-329a4.firebaseapp.com",
     databaseURL: "https://train-scheduler-329a4.firebaseio.com",
     projectId: "train-scheduler-329a4",
@@ -49,11 +50,11 @@ var firstTimeTrainOfDay = moment(firstTrainTime, "HH:mm").subtract(1, "years");
     // Minute Until Train
     var minutesAway = frequency - timeApart;
     console.log("minutes till train arrives "  + minutesAway);
-
+console.log(typeof(minutesAway));
     // Next Train
-    var arrival = moment().add(minutesAway, "minutes");
-    console.log("arrival " + moment(arrival).format("HH:mm"));
-
+    var arrival = moment().add(minutesAway, "minutes").format("HH:mm");
+   // console.log("arrival " + moment(arrival).format("HH:mm"));
+    console.log(typeof(arrival));
 
 
 //push data to firebase
@@ -62,8 +63,8 @@ trainName: trainName,
 destination: destination,
 firstTrainTime: firstTrainTime,
 frequency: frequency,
-// minutesAway: minutesAway,
-// arrival: arrival,
+minutesAway: minutesAway,
+ arrival: arrival,
 dateAdded: firebase.database.ServerValue.TIMESTAMP
 }); 
 
