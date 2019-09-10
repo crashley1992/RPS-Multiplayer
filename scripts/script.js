@@ -1,7 +1,7 @@
 //link firbase database
 var firebaseConfig = {
   //please put your own API key here.
-  
+    apiKey: "AIzaSyAZWNT2tAx_jL2WnPfW0ivdinxsp9HqQUw",
     authDomain: "train-scheduler-329a4.firebaseapp.com",
     databaseURL: "https://train-scheduler-329a4.firebaseio.com",
     projectId: "train-scheduler-329a4",
@@ -64,11 +64,9 @@ destination: destination,
 firstTrainTime: firstTrainTime,
 frequency: frequency,
 minutesAway: minutesAway,
- arrival: arrival,
+arrival: arrival,
 dateAdded: firebase.database.ServerValue.TIMESTAMP
 }); 
-
-
 
 
 
@@ -78,13 +76,13 @@ dateAdded: firebase.database.ServerValue.TIMESTAMP
  //firebase childappend
  database.ref().on("child_added", function(childSnapshot){
      //    console.log(childSnapshot.val());
-     $(".table").append("<tr> <td>"
+     $(".table").append("<tr><td>"
      + childSnapshot.val().trainName + "</td> <td>"
      + childSnapshot.val().destination + "</td> <td>"
+     + childSnapshot.val().frequency + "</td> <td>"
      + childSnapshot.val().firstTrainTime + "</td> <td>" 
-    //  + childSnapshot.val().minutesAway + "</td> <td>" 
-    //  + childSnapshot.val().arrival + "</td> <td> </tr>" 
-
+    + childSnapshot.val().minutesAway + "</td> <td>" 
+    + childSnapshot.val().arrival + "</td> <td> </tr>" 
      );
    });
     
