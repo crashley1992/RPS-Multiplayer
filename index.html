@@ -17,6 +17,9 @@
     <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 </head>
 <body>
+  <div class="background">
+    <img src="img/train.jpg" alt="">
+  </div>
 
 <div class="header-div">
 <h3 class="header">Admind Train Tracker</h3>
@@ -29,7 +32,7 @@
           <tr>
             <th scope="col">Train Name</th>
             <th scope="col">Destination</th>
-            <th scope="col">Frequency</th>
+            <th scope="col">Frequency (Mins)</th>
             <th scope="col">First Train Departure</th>
             <th scope="col">Minutes Away</th>
             <th scope="col">Arrival TIme</th>
@@ -37,6 +40,9 @@
         </thead>
         <tbody>
       </table>
+      <div>
+        <button id="remove-button" class="btn btn-primary">Delete Checked</button>
+      </div>
     </div>
 <!--Train info is submitted-->
 <div class="form-format">
@@ -53,7 +59,7 @@
 
         <div class="form-group">
             <label for="train-time">First Train Time (HH:mm military time)</label>
-            <input type="text" class="form-control" id="train-time" placeholder="firs train departure of the day">
+            <input type="text" class="form-control" id="train-time" placeholder="first train departure of the day">
           </div>
 
           <div class="form-group">
