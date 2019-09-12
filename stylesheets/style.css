@@ -1,31 +1,33 @@
+/*Styling for image*/
 .background > img {
-    height: 350px;
-    width: 100%;
+  height: 350px;
+  width: 100%;
 }
+/**Stling for Header/title of the project*/
 .header {
-    text-align: center;
-    position:absolute;
-    top:0;
-    left:0;
-    padding: 5px 5px 5px 5px;
-    background-color: #A55BFF;
-    color: white;
-    width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 5px 5px 5px;
+  background-color: #A55BFF;
+  color: white;
+  width: 100%;
 }
-
+/*Stling for table, centering and sizing*/
 .table-format {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5%;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5%;
 }
-
+/*Styling for form where info will be input*/
 .form-format {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .train-row {
-    margin-left: 3%;
+  margin-left: 3%;
 }

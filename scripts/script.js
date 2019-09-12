@@ -15,7 +15,7 @@ var database = firebase.database();
 //test to make sure firebase is linked up
 console.log(firebaseConfig.apiKey);
 
-$("#submit-button").click(function (event) {
+$("#submit-button").click(function(event) {
   //prevents data from being lost when page is reset
   event.preventDefault();
 
@@ -30,7 +30,7 @@ $("#submit-button").click(function (event) {
   console.log(firstTrainTime);
   console.log(frequency);
 
-//puts train time input into military time that can be compared to current time
+  //puts train time input into military time that can be compared to current time
   var firstTimeTrainOfDay = moment(firstTrainTime, "HH:mm").subtract(1, "years");
   console.log(firstTimeTrainOfDay);
 
@@ -38,21 +38,21 @@ $("#submit-button").click(function (event) {
   var currentTime = moment();
   console.log(moment(currentTime).format("HH:mm"));
 
-  // Difference between the current time and when the first train leaves. 
+  // Difference between the current time and when the first train leaves.
   var timeDifference = currentTime.diff(moment(firstTimeTrainOfDay), "minutes");
   console.log(moment(timeDifference).format("mm"));
 
-  // Time apart is the remainder so it can provide a whole number of when train time runs to what time it is now. 
+  // Time apart is the remainder so it can provide a whole number of when train time runs to what time it is now.
   var timeApart = moment(timeDifference % frequency, "minutes").format("mm");
   console.log(timeApart);
 
   // Takes the train frequency and gives a rounded time of how many minutes away the next expected tain will be
   var minutesAway = frequency - timeApart;
   console.log("minutes till train arrives " + minutesAway);
-  console.log(typeof (minutesAway));
+  console.log(typeof(minutesAway));
   // Minutes away is converted to time on the clock
   var arrival = moment().add(minutesAway, "minutes").format("HH:mm");
-  console.log(typeof (arrival));
+  console.log(typeof(arrival));
 
 
   //push data to firebase
@@ -69,7 +69,7 @@ $("#submit-button").click(function (event) {
 
 
 //firebase childappend
-database.ref().on("child_added", function (childSnapshot) {
+database.ref().on("child_added", function(childSnapshot) {
   //    console.log(childSnapshot.val());
   $(".table").append(" <tr class='train-row'><td><input type='checkbox' />" +
     childSnapshot.val().trainName + "</td> <td>" +
@@ -81,7 +81,7 @@ database.ref().on("child_added", function (childSnapshot) {
   );
 });
 
-//Removes row from page, but not from database and appears again on refresh of page. 
-$("#remove-button").click(function () {
+//Removes row from page, but not from database and appears again on refresh of page.
+$("#remove-button").click(function() {
   $("input[type=checkbox]:checked").closest("tr").remove();
 });
